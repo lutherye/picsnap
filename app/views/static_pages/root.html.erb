@@ -1,0 +1,12 @@
+<% if logged_in? %>
+    <script id="current-user" type="text/javascript">
+        window.user = <%= render("api/users/user.json.jbuilder",
+            user: current_user).html_safe%>
+    </script>
+<% end %>
+
+<script id="bootstrap-img" type="text/javascript">
+
+</script>
+
+<main id="root"> root </main> 
