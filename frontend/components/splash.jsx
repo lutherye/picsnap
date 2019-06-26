@@ -24,7 +24,6 @@ class Splash extends React.Component {
     changeForm() {
         let that = this;
         return () => {
-            debugger
             if (that.state.signUp) {
                 that.setState({signUp: false});
             } else {
@@ -38,8 +37,34 @@ class Splash extends React.Component {
         const buttonWord = this.state.signUp ? "Log in" : "Sign up"
         return(
             <main className="splash-page">
-                <button onClick={this.changeForm()}>{buttonWord}</button>
-                {formBar}
+                        <button className="change-form"
+                            onClick={this.changeForm()}>
+                                {buttonWord}
+                        </button>
+                <div className="splash-container">
+                    <div className="form-wrapper">
+                        <div className="form-container">
+                            <div className="logo">
+                                Logo
+                            </div>
+                            <div className="welcome">
+                                Welcome to Picsnap
+                            </div>
+                            <div className="ideas">
+                                Find new ideas to try
+                            </div>
+                            {formBar}
+                            <div className="or">
+                                OR
+                            </div>
+                            <div>
+                                <div className="">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
         )
     }

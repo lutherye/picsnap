@@ -11,6 +11,7 @@ class Signup extends React.Component {
             password: "",
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this);
     }
 
     update(field) {
@@ -31,12 +32,12 @@ class Signup extends React.Component {
                 <div className="login-wrapper">
                     <form className="login-inputs" onSubmit={this.handleSubmit}>
                         <input className="login-input" type="text"
-                            value={this.state.first_name}
+                            value={this.state.email}
                             onChange={this.update("email")}
                             placeholder="Email"
                             />
                         <input className="login-input" type="password"
-                            value={this.state.first_name}
+                            value={this.state.password}
                             onChange={this.update("password")}
                             placeholder="Password"
                             />
@@ -46,10 +47,11 @@ class Signup extends React.Component {
                             placeholder="First Name"
                             />
                         <input className="login-input" type="text"
-                            value={this.state.first_name}
+                            value={this.state.last_name}
                             onChange={this.update("last_name")}
                             placeholder="Last Name"
                             />
+                        
                         <input className="login-submit" type="submit" value="Sign Up"/>
                     </form>
                 </div>
