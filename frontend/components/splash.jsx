@@ -17,7 +17,7 @@ class Splash extends React.Component {
         this.state = {
             signUp: false,
         };
-        // this.handleDemo = this.handleDemo.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
         this.changeForm = this.changeForm.bind(this);
     }
 
@@ -30,6 +30,13 @@ class Splash extends React.Component {
                 that.setState({signUp: true});
             }
         };
+    }
+
+    handleDemo(e) {
+        e.preventDefault();
+        const demo = Object.assign({}, { email: "demo@demo.com", password: "password" });
+        this.props.login(demo)
+            .then(() => this.props.history.push('/'));
     }
 
     render() {
@@ -58,8 +65,12 @@ class Splash extends React.Component {
                                 OR
                             </div>
                             <div>
-                                <div className="">
-
+                                <div className="demo-wrapper">
+                                    <button className="demo"
+                                        onClick={this.handleDemo}
+                                    >
+                                        Continue with Demo
+                                    </button>
                                 </div>
                             </div>
                         </div>
